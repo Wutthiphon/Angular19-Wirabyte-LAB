@@ -49,6 +49,7 @@ import { HomeComponent } from './sample-component/home/home.component';
 // Template Component
 import { HeaderComponent } from './sample-component/template/header/header.component';
 import { FooterComponent } from './sample-component/template/footer/footer.component';
+import { TryPageComponent } from './components/try-page/try-page.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { FooterComponent } from './sample-component/template/footer/footer.compo
     // Template Component
     HeaderComponent,
     FooterComponent,
+    TryPageComponent,
   ],
   imports: [
     FormsModule,
