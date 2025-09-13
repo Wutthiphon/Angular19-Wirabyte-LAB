@@ -5,6 +5,23 @@
       <div class="col-12">
         <h1>สวัสดี นี่คือหน้าแรก</h1>
       </div>
+
+      <div class="col-12">
+        Home Component ========
+        <p>Non Two Way: {{ non_two_way_value }} | Two Way: {{ two_way_value }}</p>
+      </div>
+      <div class="col-12 flex gap-2">
+        <button pButton type="button" label="+1 Non Two Way" class="p-button-info p-button-sm"
+          (click)="updateNonTwoWay()">
+        </button>
+        <button pButton type="button" label="+1 Two Way" class="p-button-success p-button-sm" (click)="updateTwoWay()">
+        </button>
+      </div>
+
+      <div class="col-12">
+        Test Component ========
+        <test-component [non_two_way]="non_two_way_value" [(two_way)]="two_way_value"></test-component>
+      </div>
     </div>
   </div>
 </div>
