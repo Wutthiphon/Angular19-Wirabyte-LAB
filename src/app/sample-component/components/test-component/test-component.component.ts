@@ -11,6 +11,17 @@ export class TestComponentComponent {
   @Input() two_way: number = 0;
   @Output() two_wayChange = new EventEmitter<any>();
 
+  text_input: string = '';
+  pipe = {
+    date: new Date(),
+    uppercase: 'uppercase text',
+    lowercase: 'LOWERCASE TEXT',
+    currency: 12345.6789,
+    percent: 0.876,
+    number: 123456789,
+    reverse: 'reverse',
+  };
+
   constructor() {}
 
   updateNonTwoWay() {

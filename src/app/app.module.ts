@@ -52,6 +52,9 @@ import { HeaderComponent } from './sample-component/template/header/header.compo
 import { FooterComponent } from './sample-component/template/footer/footer.component';
 import { TryPageComponent } from './components/try-page/try-page.component';
 
+// Pipe
+import { ReversePipe } from './pipes/reverse.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +65,8 @@ import { TryPageComponent } from './components/try-page/try-page.component';
     FooterComponent,
     TestComponentComponent,
     TryPageComponent,
+    // Pipe
+    ReversePipe,
   ],
   imports: [
     FormsModule,
