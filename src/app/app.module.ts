@@ -45,6 +45,7 @@ import { ListboxModule } from 'primeng/listbox';
 
 // Component
 import { HomeComponent } from './sample-component/home/home.component';
+import { TestComponentComponent } from './sample-component/components/test-component/test-component.component';
 
 // Template Component
 import { HeaderComponent } from './sample-component/template/header/header.component';
@@ -58,6 +59,7 @@ import { FooterComponent } from './sample-component/template/footer/footer.compo
     // Template Component
     HeaderComponent,
     FooterComponent,
+    TestComponentComponent,
   ],
   imports: [
     FormsModule,
