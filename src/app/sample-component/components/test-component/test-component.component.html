@@ -8,4 +8,40 @@
     <button pButton type="button" label="+1 Two Way" class="p-button-success p-button-sm" (click)="updateTwoWay()">
     </button>
   </div>
+
+  <div class="col-12">
+    <input pInputText type="text" [(ngModel)]="text_input" placeholder="Type something..." />
+    <p>You typed: {{ text_input }}</p>
+  </div>
+
+  <div class="col-12">
+    <p [ngClass]="{ active: two_way > 10 }">two_way > 10 is green</p>
+    <p [ngStyle]="{ color: two_way > 20 ? 'green' : 'red' }">two_way > 20</p>
+  </div>
+
+  <div class="col-12">
+    <p *ngIf="two_way > 10 else less10">two_way is more than 10</p>
+    <ng-template #less10>
+      <p>two_way is 10 or less</p>
+    </ng-template>
+  </div>
+
+  <div class="col-12 md:col-4" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+    <p-card [header]="'Card ' + item">
+      Content
+    </p-card>
+  </div>
+
+  <div class="col-12">
+    <h3>Pipe</h3>
+    <ul>
+      <li>date: {{ pipe.date | date }}</li>
+      <li>uppercase: {{ pipe.uppercase | uppercase }}</li>
+      <li>lowercase: {{ pipe.lowercase | lowercase }}</li>
+      <li>currency: {{ pipe.currency | currency: 'THB' }}</li>
+      <li>percent: {{ pipe.percent | percent }}</li>
+      <li>number: {{ pipe.number | number: '1.2-2' }}</li>
+      <li>reverse: {{ pipe.reverse| reverse }}</li>
+    </ul>
+  </div>
 </div>
