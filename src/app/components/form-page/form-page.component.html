@@ -1,9 +1,82 @@
 <div class="page-content-container">
   <div class="p-2 mt-3">
-    <div class="grid">
+    <form class="grid" #regForm="ngForm" (ngSubmit)="regForm.valid && onSubmit()">
       <div class="col-12">
         <h1>ฟอร์ม</h1>
       </div>
-    </div>
+      <div class="col-12 md:col-4">
+        <label for="name">First Name (*)</label>
+        <input pInputText id="name" name="form_name" type="text" class="w-full" [(ngModel)]="form_data.first_name"
+          placeholder="ชื่อ..." required
+          [ngClass]="!form_data.first_name && regForm.submitted ? ['ng-invalid', 'ng-dirty'] : []" />
+      </div>
+      <div class="col-12 md:col-4">
+        <label for="lastname">Last Name (*)</label>
+        <input pInputText id="lastname" name="form_lastname" type="text" class="w-full"
+          [(ngModel)]="form_data.last_name" placeholder="นามสกุล..." required
+          [ngClass]="!form_data.last_name && regForm.submitted ? ['ng-invalid', 'ng-dirty'] : []" />
+      </div>
+      <div class="col-12 md:col-4">
+        <label for="email">Email (*)</label>
+        <input pInputText id="email" name="form_email" type="text" class="w-full" [(ngModel)]="form_data.email"
+          placeholder="อีเมล..." required
+          [ngClass]="!form_data.email && regForm.submitted ? ['ng-invalid', 'ng-dirty'] : []" />
+      </div>
+
+      <div class="col-12 md:col-4">
+        <label for="username">Username (*)</label>
+        <input pInputText id="username" name="form_username" type="text" class="w-full" [(ngModel)]="form_data.username"
+          placeholder="ชื่อผู้ใช้..." required
+          [ngClass]="!form_data.username && regForm.submitted ? ['ng-invalid', 'ng-dirty'] : []" />
+      </div>
+      <div class="col-12 md:col-4">
+        <label for="password">Password (*)</label>
+        <input pInputText id="password" name="form_password" type="password" class="w-full"
+          [(ngModel)]="form_data.password" placeholder="รหัสผ่าน..." required
+          [ngClass]="!form_data.password && regForm.submitted ? ['ng-invalid', 'ng-dirty'] : []" />
+      </div>
+      <div class="col-12 md:col-4">
+        <label for="re_password">Re-Passowrd (*)</label>
+        <input pInputText id="re_password" name="form_re_password" type="password" class="w-full"
+          [(ngModel)]="form_data.re_password" placeholder="ยืนยันรหัสผ่าน..." required
+          [ngClass]="!form_data.re_password && regForm.submitted ? ['ng-invalid', 'ng-dirty'] : []" />
+      </div>
+
+      <div class="col-12">
+        <div class="flex items-center">
+          <p-checkbox inputId="agree" name="form_agree" [(ngModel)]="form_data.agree" binary="true"></p-checkbox>
+          <label for="agree" class="ml-2"> ยอมรับเงื่อนไขและข้อตกลง </label>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <ul>
+          <li>
+            ค่าที่ห้ามว่าง:
+            <b class="mr-1" [ngClass]="!form_data.first_name ? ['text-red-600'] : ['text-green-600']">First Name</b>
+            <b class="mr-1" [ngClass]="!form_data.last_name ? ['text-red-600'] : ['text-green-600']">Last Name</b>
+            <b class="mr-1" [ngClass]="!form_data.email ? ['text-red-600'] : ['text-green-600']">Email</b>
+            <b class="mr-1" [ngClass]="!form_data.username ? ['text-red-600'] : ['text-green-600']">Username</b>
+            <b class="mr-1" [ngClass]="!form_data.password ? ['text-red-600'] : ['text-green-600']">Password</b>
+          </li>
+          <li>
+            <b
+              [ngClass]="!form_data.password || form_data.password != form_data.re_password ? ['text-red-600'] : ['text-green-600']">รหัสผ่านต้องเหมือนกันทั้ง
+              2 ช่อง</b>
+          </li>
+          <li>
+            <b [ngClass]="!form_data.agree ? ['text-red-600'] : ['text-green-600']">ยอมรับเงื่อนไขและข้อตกลง</b>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-12 text-center text-red-600" *ngIf="form_error_message">
+        {{ form_error_message }}
+      </div>
+
+      <div class="col-12 text-center">
+        <button pButton type="submit" class="p-button-warn" icon="pi pi-send" label="ส่งข้อมูล"></button>
+      </div>
+    </form>
   </div>
 </div>
