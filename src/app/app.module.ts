@@ -46,6 +46,7 @@ import { ListboxModule } from 'primeng/listbox';
 // Component
 import { HomeComponent } from './sample-component/home/home.component';
 import { TestComponentComponent } from './sample-component/components/test-component/test-component.component';
+import { FormPageComponent } from './components/form-page/form-page.component';
 
 // Template Component
 import { HeaderComponent } from './sample-component/template/header/header.component';
@@ -60,11 +61,12 @@ import { ReversePipe } from './pipes/reverse.pipe';
     AppComponent,
     // Component
     HomeComponent,
+    TryPageComponent,
+    FormPageComponent,
     // Template Component
     HeaderComponent,
     FooterComponent,
     TestComponentComponent,
-    TryPageComponent,
     // Pipe
     ReversePipe,
   ],
