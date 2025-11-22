@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ReversePipe } from '../../../pipes/reverse.pipe';
 
 @Component({
   selector: 'test-component',
@@ -10,6 +11,7 @@ export class TestComponentComponent {
   @Input() non_two_way: number = 0;
   @Input() two_way: number = 0;
   @Output() two_wayChange = new EventEmitter<any>();
+  reversePipe = new ReversePipe();
 
   text_input: string = '';
   pipe = {
@@ -20,6 +22,7 @@ export class TestComponentComponent {
     percent: 0.876,
     number: 123456789,
     reverse: 'reverse',
+    reverse2: this.reversePipe.transform('!dlroW ,olleH'),
   };
 
   constructor() {}

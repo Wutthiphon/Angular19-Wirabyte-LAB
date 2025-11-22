@@ -51,10 +51,13 @@ import { FormPageComponent } from './components/form-page/form-page.component';
 // Template Component
 import { HeaderComponent } from './sample-component/template/header/header.component';
 import { FooterComponent } from './sample-component/template/footer/footer.component';
+
 import { TryPageComponent } from './components/try-page/try-page.component';
 
 // Pipe
 import { ReversePipe } from './pipes/reverse.pipe';
+import { Page1Component } from './components/page1/page1.component';
+import { BdatePipe } from './pipes/bdate.pipe';
 
 @NgModule({
   declarations: [
@@ -69,6 +72,8 @@ import { ReversePipe } from './pipes/reverse.pipe';
     TestComponentComponent,
     // Pipe
     ReversePipe,
+    Page1Component,
+    BdatePipe,
   ],
   imports: [
     FormsModule,
