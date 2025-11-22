@@ -6,6 +6,26 @@
       </div>
 
       <div class="col-12">
+        <input pInputText type="text" placeholder="กรอก Username" [(ngModel)]="input_username" />
+      </div>
+      <div class="col-12 flex gap-2">
+        <button pButton type="button" label="บันทึก Username" class="p-button-primary p-button-sm" icon="pi pi-save"
+          (click)="saveUsername()">
+        </button>
+        <button pButton type="button" label="ล้าง Username" class="p-button-danger p-button-sm" icon="pi pi-times"
+          (click)="clearUsername()">
+        </button>
+      </div>
+
+      <div class="col-12">
+        <ul>
+          <li *ngFor="let user of users">
+            {{ user.full_name }} - {{ user.username }} - {{ user.birthday | bdate }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-12">
         <page1></page1>
       </div>
 

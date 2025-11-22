@@ -2,7 +2,8 @@
   <ng-template pTemplate="start">
     <div class="flex flex-wrap gap-2 pointer" routerLink="/">
       <div class="flex align-items-center">
-        Wirabyte LAB
+        Wirabyte LAB |
+        @if(username) {Login AS: {{ username }} }
       </div>
     </div>
   </ng-template>
